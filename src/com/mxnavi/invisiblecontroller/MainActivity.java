@@ -12,11 +12,10 @@ public class MainActivity extends Activity implements CommandResultListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);	
-		controllerServiceBinder = ((InvisibleControllerApplication)getApplication()).getControllerServiceBinder();
-		
 	}
 	
 	public void clickFMOn(View v) {
+		controllerServiceBinder = ((InvisibleControllerApplication)getApplication()).getControllerServiceBinder();
 		String command = commandMaker.make(CommandMaker.Instruct.FMLON);
 		controllerServiceBinder.sendCommand(command);
 	}

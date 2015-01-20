@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class CommandMaker {
+	static final String END_COMMAND_SIGN = "\n";
 	enum Instruct {
 		FMLON,
 		FMLOFF,
@@ -37,6 +38,6 @@ public class CommandMaker {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return commandJson.toString();
+		return commandJson.toString() + END_COMMAND_SIGN;
 	}
 }

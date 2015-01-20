@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -19,7 +20,7 @@ public class ControllerService extends Service {
 	private ControllerServiceBinder controllerServiceBinder = new ControllerServiceBinder();
 	private Socket clientSocket;
 	private CommandResultListener commandResultListener;
-	OutputStream outputStream;
+	PrintWriter printWriter;
 	private final String ipAddress = "192.168.2.231";
 	public ControllerService() {
 	}
@@ -45,12 +46,8 @@ public class ControllerService extends Service {
 	
 	public class ControllerServiceBinder extends Binder {
 		public void sendCommand(String command) {
-			try {
-				outputStream.write(command.getBytes());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			printWriter.write(command);
+			printWriter.flush();
 		}
 		
 		public void addCommandResultListener(CommandResultListener listener) {
@@ -65,13 +62,14 @@ public class ControllerService extends Service {
 			
 			 try {
 				clientSocket = new Socket(ipAddress, 9876);
-				outputStream = clientSocket.getOutputStream(); 
+				printWriter = new PrintWriter(clientSocket.getOutputStream(), true); 
 				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(  
 						 clientSocket.getInputStream()));
 				JSONObject initJsonObject = new JSONObject();
 				initJsonObject.put("type", "init");
 				initJsonObject.put("name", "pad");
-				outputStream.write(initJsonObject.toString().getBytes());
+				printWriter.write(initJsonObject.toString()+"\n");
+				printWriter.flush();
 				while(true) {
 					String line = "";  
 	                buffer="";  
