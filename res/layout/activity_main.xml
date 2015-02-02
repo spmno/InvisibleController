@@ -49,6 +49,14 @@
         android:layout_row="0"
         android:text="@string/action4"
         android:textSize="40sp" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_column="5"
+        android:layout_marginRight="30dp"
+        android:layout_gravity="fill"
+        android:layout_row="0"
+        android:text="@string/action5"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/textViewFMLight"
@@ -71,6 +79,7 @@
         android:layout_row="1"
         android:text="@string/Off"
         android:onClick="clickFMOff" />
+
     
     <TextView
         android:id="@+id/textViewFSLight"
@@ -93,5 +102,279 @@
         android:layout_row="2"
         android:text="@string/Off" 
         android:onClick="clickFSOff" />
+    
+    <TextView
+        android:id="@+id/textViewChair"
+        android:layout_column="0"
+        android:layout_row="3"
+        android:text="@string/Chair"
+        android:textSize="40sp" />
+    <Button
+        android:id="@+id/buttonChairStart"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="3"
+        android:text="@string/ChairStart" 
+        android:onClick="clickChairStart" />
+    <Button
+        android:id="@+id/buttonChairHeaderUp"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="3"
+        android:text="@string/ChairHeaderUp" 
+        android:onClick="clickChairHeaderUp" />
+    <Button
+        android:id="@+id/buttonChairHeaderDown"
+        android:layout_column="3"
+        android:layout_gravity="fill"
+        android:layout_row="3"
+        android:text="@string/ChairHeaderDown" 
+        android:onClick="clickChairHeaderDown" />
+    <Button
+        android:id="@+id/buttonBackUp"
+        android:layout_column="4"
+        android:layout_gravity="fill"
+        android:layout_row="3"
+        android:text="@string/ChairBackUp" 
+        android:onClick="clickChairBackUp" />
+    <Button
+        android:id="@+id/buttonBackDown"
+        android:layout_column="5"
+        android:layout_gravity="fill"
+        android:layout_row="3"
+        android:text="@string/ChairBackDown" 
+        android:onClick="clickChairBackDown" />
+    <TextView
+        android:id="@+id/textViewChair1"
+        android:layout_column="0"
+        android:layout_row="4"
+        android:text="@string/Chair"
+        android:textSize="40sp" />
+    <!-- 
+    <Button
+        android:id="@+id/buttonChairHipUp"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="4"
+        android:text="@string/ChairHipUp" 
+        android:onClick="clickChairHipUp" />
+    <Button
+        android:id="@+id/buttonChairHipDown"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="4"
+        android:text="@string/ChairHipDown" 
+        android:onClick="clickChairHipDown" />
+    -->    
+    <Button
+        android:id="@+id/buttonChairFootUp"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="4"
+        android:text="@string/ChairFootUp" 
+        android:onClick="clickChairFootUp" />
+    <Button
+        android:id="@+id/buttonChairFootDown"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="4"
+        android:text="@string/ChairFootDown" 
+        android:onClick="clickChairFootDown" />
+        <Button
+        android:id="@+id/buttonStraight"
+        android:layout_column="3"
+        android:layout_gravity="fill"
+        android:layout_row="4"
+        android:text="@string/ChairStraight" 
+        android:onClick="clickChairStraight" />
+    <Button
+        android:id="@+id/buttonChairHalfLayDown"
+        android:layout_column="4"
+        android:layout_gravity="fill"
+        android:layout_row="4"
+        android:text="@string/ChairHalfLayDown" 
+        android:onClick="clickChairHalfLayDown" />
+    <Button
+        android:id="@+id/buttonChairLayDown"
+        android:layout_column="5"
+        android:layout_gravity="fill"
+        android:layout_row="4"
+        android:text="@string/ChairLayDown" 
+        android:onClick="clickChairLayDown" />
+    <!-- 
+        <Button
+        android:id="@+id/buttonWaistUp"
+        android:layout_column="5"
+        android:layout_gravity="fill"
+        android:layout_row="4"
+        android:text="@string/ChairWaistUp" 
+        android:onClick="clickChairWaistUp" />
+     -->
+
+    <TextView
+        android:id="@+id/textViewChair2"
+        android:layout_column="0"
+        android:layout_row="5"
+        android:text="@string/Chair"
+        android:textSize="40sp" />
+    <!-- 
+        <Button
+        android:id="@+id/buttonChairWaistDown"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="5"
+        android:text="@string/ChairWaistDown" 
+        android:onClick="clickChairWaistDown" />
+     -->
+
+
+
+    <Button
+        android:id="@+id/buttonChairStop"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="5"
+        android:text="@string/ChairStop" 
+        android:onClick="clickChairStop" />
+    
+    <TextView
+        android:id="@+id/textViewFrontDoor"
+        android:layout_column="0"
+        android:layout_row="6"
+        android:text="@string/FrontDoor"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/buttonFrontDoorOn"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="6"
+        android:text="@string/On"
+        android:onClick="clickFrontDoorOpen" />
+    
+    <Button
+        android:id="@+id/buttonFrontDoorOff"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="6"
+        android:text="@string/Off" 
+        android:onClick="clickFrontDoorClose" />
+    
+    <TextView
+        android:id="@+id/textViewLock"
+        android:layout_column="0"
+        android:layout_row="7"
+        android:text="@string/FrontDoorLock"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/buttonFrontDoorLockOpen"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="7"
+        android:text="@string/On"
+        android:onClick="clickFrontDoorLockOpen" />
+    
+    <Button
+        android:id="@+id/buttonFrontLockClose"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="7"
+        android:text="@string/Off" 
+        android:onClick="clickFrontDoorLockClose" />
+    
+    <TextView
+        android:id="@+id/textLight"
+        android:layout_column="0"
+        android:layout_row="8"
+        android:text="@string/LightTest"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/lightTestOn"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="8"
+        android:text="@string/On"
+        android:onClick="clickLightTestOn" />
+    
+    <Button
+        android:id="@+id/lightTestOff"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="8"
+        android:text="@string/Off" 
+        android:onClick="clickLightTestOff" />
+    
+    <Button
+        android:id="@+id/lightTestRedOn"
+        android:layout_column="3"
+        android:layout_gravity="fill"
+        android:layout_row="8"
+        android:text="@string/RedOn" 
+        android:onClick="clickLightTestRedOn" />
+   
+   <Button
+        android:id="@+id/lightTestRedLittle"
+        android:layout_column="4"
+        android:layout_gravity="fill"
+        android:layout_row="8"
+        android:text="@string/RedLittle" 
+        android:onClick="clickLightTestRedLittle" />
+   
+   <Button
+        android:id="@+id/lightTestGreenOn"
+        android:layout_column="5"
+        android:layout_gravity="fill"
+        android:layout_row="8"
+        android:text="@string/GreenOn" 
+        android:onClick="clickLightTestGreenOn" />
+   
+   <TextView
+        android:id="@+id/textLight1"
+        android:layout_column="0"
+        android:layout_row="9"
+        android:text="@string/LightTest"
+        android:textSize="40sp" />
+   
+
+   
+   <Button
+        android:id="@+id/lightTestGreenLittle"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="9"
+        android:text="@string/GreenLittle" 
+        android:onClick="clickLightTestGreenLittle" />
+   
+   <Button
+        android:id="@+id/lightTestBlueOn"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="9"
+        android:text="@string/BlueOn" 
+        android:onClick="clickLightTestBlueOn" />
+  <Button
+        android:id="@+id/lightTestBlueLittle"
+        android:layout_column="3"
+        android:layout_gravity="fill"
+        android:layout_row="9"
+        android:text="@string/BlueLittle" 
+        android:onClick="clickLightTestBlueLittle" />
+  <Button
+        android:id="@+id/lightTestMixOn"
+        android:layout_column="4"
+        android:layout_gravity="fill"
+        android:layout_row="9"
+        android:text="@string/MixOn" 
+        android:onClick="clickLightTestMixOn" />
+  
+  <Button
+        android:id="@+id/lightTestMixLittle"
+        android:layout_column="5"
+        android:layout_gravity="fill"
+        android:layout_row="9"
+        android:text="@string/MixLittle" 
+        android:onClick="clickLightTestMixLittle" />
 
 </GridLayout>

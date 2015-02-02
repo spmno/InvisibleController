@@ -19,9 +19,10 @@ import android.os.IBinder;
 public class ControllerService extends Service {
 	private ControllerServiceBinder controllerServiceBinder = new ControllerServiceBinder();
 	private Socket clientSocket;
-	private CommandResultListener commandResultListener;
+	BufferedReader bufferedReader;
+	static private CommandResultListener commandResultListener;
 	PrintWriter printWriter;
-	private final String ipAddress = "192.168.2.231";
+	private final String ipAddress = "192.168.1.100";
 	public ControllerService() {
 	}
 
@@ -34,8 +35,6 @@ public class ControllerService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		NetworkThread networkThread = new NetworkThread();
-		networkThread.start();
 	}
 	
 	@Override
@@ -53,23 +52,44 @@ public class ControllerService extends Service {
 		public void addCommandResultListener(CommandResultListener listener) {
 			commandResultListener = listener;
 		}
+		
+		public void connectServer() {
+			NetworkStartThread networkThread = new NetworkStartThread();
+			networkThread.start();
+		}
 	}
-	
-	class NetworkThread extends Thread {
-		private String buffer = "";
-		@Override
+
+	class NetworkStartThread extends Thread {
+		@Override 
 		public void run() {
-			
-			 try {
+			try {
 				clientSocket = new Socket(ipAddress, 9876);
 				printWriter = new PrintWriter(clientSocket.getOutputStream(), true); 
-				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(  
+				bufferedReader = new BufferedReader(new InputStreamReader(  
 						 clientSocket.getInputStream()));
 				JSONObject initJsonObject = new JSONObject();
 				initJsonObject.put("type", "init");
 				initJsonObject.put("name", "pad");
 				printWriter.write(initJsonObject.toString()+"\n");
 				printWriter.flush();
+				commandResultListener.commandResultArrived("netconnected");
+			} catch (IOException e) {
+				e.printStackTrace();
+				commandResultListener.commandResultArrived("neterror");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+	class NetworkThread extends Thread {
+		private String buffer = "";
+		@Override
+		public void run() {
+			
+			 try {
 				while(true) {
 					String line = "";  
 	                buffer="";  

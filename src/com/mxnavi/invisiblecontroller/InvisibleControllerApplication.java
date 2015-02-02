@@ -11,7 +11,7 @@ import android.os.IBinder;
 public class InvisibleControllerApplication extends Application {
 	private ControllerServiceConnection controllerServiceConnection;
 	private ControllerService.ControllerServiceBinder controllerServiceBinder;
-
+	private ServerStartedListener serverStartedListener;
 	
 	@Override
     public void onCreate() {
@@ -25,12 +25,17 @@ public class InvisibleControllerApplication extends Application {
 		return controllerServiceBinder;
 	}
 	
+	public void addServerStartedListener(ServerStartedListener listener) {
+		serverStartedListener = listener;
+	}
+	
 	public class ControllerServiceConnection implements ServiceConnection {
 
 		@Override
 		public void onServiceConnected(ComponentName arg0, IBinder iBinder) {
 			// TODO Auto-generated method stub
 			controllerServiceBinder = (ControllerService.ControllerServiceBinder)iBinder;
+			serverStartedListener.started();
 		}
 
 		@Override
