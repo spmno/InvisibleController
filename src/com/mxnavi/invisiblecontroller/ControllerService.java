@@ -3,10 +3,8 @@ package com.mxnavi.invisiblecontroller;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,7 +20,7 @@ public class ControllerService extends Service {
 	BufferedReader bufferedReader;
 	static private CommandResultListener commandResultListener;
 	PrintWriter printWriter;
-	private final String ipAddress = "192.168.1.100";
+	private final String ipAddress = "192.168.1.104";
 	public ControllerService() {
 	}
 
@@ -84,7 +82,7 @@ public class ControllerService extends Service {
 		}
 	}
 
-	class NetworkThread extends Thread {
+	class NetworkReadThread extends Thread {
 		private String buffer = "";
 		@Override
 		public void run() {

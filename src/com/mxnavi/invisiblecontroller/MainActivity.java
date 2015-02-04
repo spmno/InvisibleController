@@ -3,7 +3,10 @@ package com.mxnavi.invisiblecontroller;
 import java.lang.ref.WeakReference;
 
 import android.app.Activity;
-import android.content.Context;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -24,12 +27,28 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		public void handleMessage(Message msg) {   
             switch (msg.what) {   
                 case 0x11:  
-                	Toast.makeText(activity.get().getApplicationContext(), "连接错误",
-                		     Toast.LENGTH_SHORT).show();
+                	Toast.makeText(activity.get().getApplicationContext(), 
+                			"连接错误",
+                			Toast.LENGTH_SHORT).show();
+               	    Dialog alertDialog = new AlertDialog.Builder(activity.get()). 
+                         setTitle("错误"). 
+                         setMessage("网络连接错误"). 
+                         setIcon(R.drawable.ic_launcher). 
+                         setNegativeButton("确定", new DialogInterface.OnClickListener() {
+                             @Override
+                             public void onClick(DialogInterface dialog, int which) {
+                              // TODO Auto-generated method stub
+                            	 android.os.Process.killProcess(android.os.Process.myPid());
+                             }
+                            }).
+                         create(); 
+                    alertDialog.show();
                     break;   
                 case 0x12:
-                	Toast.makeText(activity.get().getApplicationContext(), "连接成功",
+                	Toast.makeText(activity.get().getApplicationContext(),
+                			"连接成功",
                		     Toast.LENGTH_SHORT).show();
+
                    break;  
             }   
             //super.handleMessage(msg);   
@@ -202,6 +221,42 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 	public void clickLightTestMixLittle(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.TESTMIXLIGHTLITTLE);
 		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickPower5V1On(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.POWER5V1ON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickPower5V1Off(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.POWER5V1OFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickPower12V1On(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.POWER12V1ON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickPower12V1Off(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.POWER12V1OFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickPower24V1On(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.POWER24V1ON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickPower24V1Off(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.POWER24V1OFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void lightTestActivity(View v) {
+		Intent intent = new Intent();
+		intent.setClass(MainActivity.this, AdjustLightActivity.class);
+		startActivity(intent);
 	}
 	
 	@Override

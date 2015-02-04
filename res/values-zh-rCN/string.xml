@@ -48,4 +48,9 @@
     <string name="BlueLittle">蓝微</string>
     <string name="MixOn">全开</string>
     <string name="MixLittle">全微</string>
+    <string name="DragSeek">拉动进度条</string>
+    <string name="AdjustLight">调节</string>
+    <string name="Power5V">电源5V</string>
+    <string name="Power12V">电源12V</string>
+    <string name="Power24V">电源24V</string>
 </resources>

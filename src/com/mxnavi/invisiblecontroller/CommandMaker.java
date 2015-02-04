@@ -48,7 +48,15 @@ public class CommandMaker {
 		TESTBLUELIGHTLITTLE,
 		TESTMIXLIGHTON,
 		TESTMIXLIGHTLITTLE,
+		ADJUSTLIGHT,
+		POWER5V1ON,
+		POWER5V1OFF,
+		POWER12V1ON,
+		POWER12V1OFF,
+		POWER24V1ON,
+		POWER24V1OFF,
 	}
+	
 	public String make(Instruct instruct) {
 		JSONObject commandJson = new JSONObject();
 		String type = "";
@@ -266,8 +274,66 @@ public class CommandMaker {
 			part = "front-mid-light";
 			action = "mix-little";
 			break;
+		case POWER5V1ON:
+			type = "single";
+			part = "power-5v-1";
+			action = "on";
+			break;
+		case POWER5V1OFF:
+			type = "single";
+			part = "power-5v-1";
+			action = "off";
+			break;
+		case POWER12V1ON:
+			type = "single";
+			part = "power-12v-1";
+			action = "on";
+			break;
+		case POWER12V1OFF:
+			type = "single";
+			part = "power-12v-1";
+			action = "off";
+			break;
+		case POWER24V1ON:
+			type = "single";
+			part = "power-24v-1";
+			action = "on";
+			break;
+		case POWER24V1OFF:
+			type = "single";
+			part = "power-24v-1";
+			action = "off";
+			break;
 		default:
 			return "";
+		}
+		
+		try {
+			commandJson.put("type", type);
+			commandJson.put("part", part);
+			commandJson.put("action", action);
+			commandJson.put("priority", "high");
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return commandJson.toString() + END_COMMAND_SIGN;
+	}
+	
+	public String make(Instruct instruct, String value) {
+		JSONObject commandJson = new JSONObject();
+		String type = "";
+		String part = "";
+		String action = "";
+
+		switch(instruct) {
+		case ADJUSTLIGHT:
+			type = "single";
+			part = "light-adjust";
+			action = value;
+			break;
+		default:
+			break;
 		}
 		
 		try {

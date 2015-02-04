@@ -1,8 +1,10 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridLayout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="top"
     android:columnCount="6"
+    android:layout_margin="5dp"
     android:rowCount="32" >
 
     <TextView
@@ -376,5 +378,89 @@
         android:layout_row="9"
         android:text="@string/MixLittle" 
         android:onClick="clickLightTestMixLittle" />
+  
+    <TextView
+        android:id="@+id/textLight2"
+        android:layout_column="0"
+        android:layout_row="10"
+        android:text="@string/LightTest"
+        android:textSize="40sp" />
+  
+    <Button
+        android:id="@+id/lightTestActivity"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="10"
+        android:text="@string/AdjustLight" 
+        android:onClick="lightTestActivity" />
 
+    <TextView
+        android:id="@+id/textPower5V"
+        android:layout_column="0"
+        android:layout_row="11"
+        android:text="@string/Power5V"
+        android:textSize="40sp" />
+  
+    <Button
+        android:id="@+id/power5V1On"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="11"
+        android:text="@string/On" 
+        android:onClick="clickPower5V1On" />
+    
+    <Button
+        android:id="@+id/power5V1Off"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="11"
+        android:text="@string/Off" 
+        android:onClick="clickPower5V1Off" />
+    
+    <TextView
+        android:id="@+id/textPower12V"
+        android:layout_column="0"
+        android:layout_row="12"
+        android:text="@string/Power12V"
+        android:textSize="40sp" />
+  
+    <Button
+        android:id="@+id/power12V1On"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="12"
+        android:text="@string/On" 
+        android:onClick="clickPower12V1On" />
+    
+    <Button
+        android:id="@+id/power12V1Off"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="12"
+        android:text="@string/Off" 
+        android:onClick="clickPower12V1Off" />
+    
+    <TextView
+        android:id="@+id/textPower24V"
+        android:layout_column="0"
+        android:layout_row="13"
+        android:text="@string/Power24V"
+        android:textSize="40sp" />
+  
+    <Button
+        android:id="@+id/power24V1On"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="13"
+        android:text="@string/On" 
+        android:onClick="clickPower24V1On" />
+    
+    <Button
+        android:id="@+id/power24V1Off"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="13"
+        android:text="@string/Off" 
+        android:onClick="clickPower24V1Off" />
+    
 </GridLayout>
