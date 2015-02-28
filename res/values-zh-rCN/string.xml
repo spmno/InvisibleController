@@ -37,7 +37,7 @@
 	<string name="ChairStop">停</string>
     <string name="On">开</string>
     <string name="Off">关</string>
-    <string name="FrontDoor">前门</string>
+    <string name="FrontDoor">虹膜</string>
     <string name="FrontDoorLock">前门锁</string>
     <string name="LightTest">灯测试</string>
     <string name="RedOn">红开</string>
@@ -53,4 +53,7 @@
     <string name="Power5V">电源5V</string>
     <string name="Power12V">电源12V</string>
     <string name="Power24V">电源24V</string>
+    <string name="irisPanel">虹膜板</string>
+    <string name="relay3">继电器3</string>
+    <string name="relay4">继电器4</string>
 </resources>
