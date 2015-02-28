@@ -55,6 +55,12 @@ public class CommandMaker {
 		POWER12V1OFF,
 		POWER24V1ON,
 		POWER24V1OFF,
+		IRISPANELON,
+		IRISPANELOFF,
+		RELAY3ON,
+		RELAY3OFF,
+		RELAY4ON,
+		RELAY4OFF,
 	}
 	
 	public String make(Instruct instruct) {
@@ -304,6 +310,36 @@ public class CommandMaker {
 			part = "power-24v-1";
 			action = "off";
 			break;
+		case IRISPANELON:
+			type = "single";
+			part = "iris-door";
+			action = "open";
+			break;
+		case IRISPANELOFF:
+			type = "single";
+			part = "iris-door";
+			action = "close";
+			break;
+		case RELAY3ON:
+			type = "single";
+			part = "relay3";
+			action = "on1";
+			break;
+		case RELAY3OFF:
+			type = "single";
+			part = "relay3";
+			action = "off1";
+			break;
+		case RELAY4ON:
+			type = "single";
+			part = "relay3";
+			action = "on2";
+			break;
+		case RELAY4OFF:
+			type = "single";
+			part = "relay3";
+			action = "off2";
+			break;
 		default:
 			return "";
 		}
@@ -320,7 +356,7 @@ public class CommandMaker {
 		return commandJson.toString() + END_COMMAND_SIGN;
 	}
 	
-	public String make(Instruct instruct, String value) {
+	public String make(Instruct instruct, int red, int green, int blue, int bright) {
 		JSONObject commandJson = new JSONObject();
 		String type = "";
 		String part = "";
@@ -329,8 +365,8 @@ public class CommandMaker {
 		switch(instruct) {
 		case ADJUSTLIGHT:
 			type = "single";
-			part = "light-adjust";
-			action = value;
+			part = "adjustable-light";
+			action = String.format("%d:%d:%d:%d", red, green, blue, bright);
 			break;
 		default:
 			break;

@@ -1,6 +1,10 @@
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+<GridLayout 
     android:id="@+id/gridLayout"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="top"
     android:columnCount="6"
@@ -73,6 +77,7 @@
         android:layout_gravity="fill"
         android:layout_row="1"
         android:text="@string/On"
+        android:enabled="false"
         android:onClick="clickFMOn" />
     <Button
         android:id="@+id/buttonFMOff"
@@ -80,6 +85,7 @@
         android:layout_gravity="fill"
         android:layout_row="1"
         android:text="@string/Off"
+        android:enabled="false"
         android:onClick="clickFMOff" />
 
     
@@ -96,6 +102,7 @@
         android:layout_gravity="fill"
         android:layout_row="2"
         android:text="@string/On"
+        android:enabled="false"
         android:onClick="clickFSOn" />
     <Button
         android:id="@+id/buttonFSOff"
@@ -103,6 +110,7 @@
         android:layout_gravity="fill"
         android:layout_row="2"
         android:text="@string/Off" 
+        android:enabled="false"
         android:onClick="clickFSOff" />
     
     <TextView
@@ -123,6 +131,7 @@
         android:layout_column="2"
         android:layout_gravity="fill"
         android:layout_row="3"
+        android:enabled="false"
         android:text="@string/ChairHeaderUp" 
         android:onClick="clickChairHeaderUp" />
     <Button
@@ -130,6 +139,7 @@
         android:layout_column="3"
         android:layout_gravity="fill"
         android:layout_row="3"
+        android:enabled="false"
         android:text="@string/ChairHeaderDown" 
         android:onClick="clickChairHeaderDown" />
     <Button
@@ -182,12 +192,13 @@
         android:layout_row="4"
         android:text="@string/ChairFootDown" 
         android:onClick="clickChairFootDown" />
-        <Button
+    <Button
         android:id="@+id/buttonStraight"
         android:layout_column="3"
         android:layout_gravity="fill"
         android:layout_row="4"
         android:text="@string/ChairStraight" 
+        android:enabled="false"
         android:onClick="clickChairStraight" />
     <Button
         android:id="@+id/buttonChairHalfLayDown"
@@ -195,6 +206,7 @@
         android:layout_gravity="fill"
         android:layout_row="4"
         android:text="@string/ChairHalfLayDown" 
+        android:enabled="false"
         android:onClick="clickChairHalfLayDown" />
     <Button
         android:id="@+id/buttonChairLayDown"
@@ -202,6 +214,7 @@
         android:layout_gravity="fill"
         android:layout_row="4"
         android:text="@string/ChairLayDown" 
+        android:enabled="false"
         android:onClick="clickChairLayDown" />
     <!-- 
         <Button
@@ -283,6 +296,7 @@
         android:layout_gravity="fill"
         android:layout_row="7"
         android:text="@string/Off" 
+        android:clickable="false"
         android:onClick="clickFrontDoorLockClose" />
     
     <TextView
@@ -393,14 +407,14 @@
         android:layout_row="10"
         android:text="@string/AdjustLight" 
         android:onClick="lightTestActivity" />
-
-    <TextView
+     <!-- 
+        <TextView
         android:id="@+id/textPower5V"
         android:layout_column="0"
         android:layout_row="11"
         android:text="@string/Power5V"
         android:textSize="40sp" />
-  
+
     <Button
         android:id="@+id/power5V1On"
         android:layout_column="1"
@@ -416,6 +430,8 @@
         android:layout_row="11"
         android:text="@string/Off" 
         android:onClick="clickPower5V1Off" />
+    
+
     
     <TextView
         android:id="@+id/textPower12V"
@@ -462,5 +478,75 @@
         android:layout_row="13"
         android:text="@string/Off" 
         android:onClick="clickPower24V1Off" />
+      -->
+   <TextView
+        android:id="@+id/textRelay3"
+        android:layout_column="0"
+        android:layout_row="11"
+        android:text="@string/relay3"
+        android:textSize="40sp" />
+  
+    <Button
+        android:id="@+id/relay3On"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="11"
+        android:text="@string/On" 
+        android:onClick="clickRelay3On" />
+    
+    <Button
+        android:id="@+id/relay3Off"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="11"
+        android:text="@string/Off"
+        android:onClick="clickRelay3Off" />
+    <TextView
+        android:id="@+id/textRelay4"
+        android:layout_column="0"
+        android:layout_row="12"
+        android:text="@string/relay4"
+        android:textSize="40sp" />
+  
+    <Button
+        android:id="@+id/relay4On"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="12"
+        android:text="@string/On" 
+        android:onClick="clickRelay4On" />
+    
+    <Button
+        android:id="@+id/relay4Off"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="12"
+        android:text="@string/Off"
+        android:onClick="clickRelay4Off" />
+    <TextView
+        android:id="@+id/textIrisPanel"
+        android:layout_column="0"
+        android:layout_row="14"
+        android:text="@string/irisPanel"
+        android:textSize="40sp" />
+  
+    <Button
+        android:id="@+id/irisPanelOn"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="14"
+        android:text="@string/On" 
+        android:enabled="false"
+        android:onClick="irisPanelOn" />
+    
+    <Button
+        android:id="@+id/irisPanelOff"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="14"
+        android:text="@string/Off"
+        android:enabled="false"
+        android:onClick="irisPanelOff" />
     
 </GridLayout>
+</ScrollView>

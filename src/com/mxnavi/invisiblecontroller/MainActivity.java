@@ -259,6 +259,36 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		startActivity(intent);
 	}
 	
+	public void irisPanelOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.IRISPANELON);
+		controllerServiceBinder.sendCommand(command);		
+	}
+	
+	public void irisPanelOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.IRISPANELOFF);
+		controllerServiceBinder.sendCommand(command);		
+	}
+	
+	public void clickRelay3On(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.RELAY3ON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickRelay3Off(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.RELAY3OFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickRelay4On(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.RELAY4ON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickRelay4Off(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.RELAY4OFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
 	@Override
 	public void commandResultArrived(String command) {
 		// TODO Auto-generated method stub

@@ -20,7 +20,7 @@ public class ControllerService extends Service {
 	BufferedReader bufferedReader;
 	static private CommandResultListener commandResultListener;
 	PrintWriter printWriter;
-	private final String ipAddress = "192.168.1.104";
+	private final String ipAddress = "192.168.2.231";
 	public ControllerService() {
 	}
 
