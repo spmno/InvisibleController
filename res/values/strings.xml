@@ -39,6 +39,8 @@
     <string name="On">On</string>
     <string name="Off">Off</string>
     <string name="FrontDoor">FrontDoor</string>
+    <string name="BackDoor">BackDoor</string>
+    <string name="TailDoor">BackDoor</string>
     <string name="FrontDoorLock">FrontDoorLock</string>
     <string name="LightTest">LightTest</string>
     <string name="RedOn">RedOn</string>

@@ -20,7 +20,7 @@ public class ControllerService extends Service {
 	BufferedReader bufferedReader;
 	static private CommandResultListener commandResultListener;
 	PrintWriter printWriter;
-	private final String ipAddress = "192.168.2.231";
+	private final String ipAddress = "192.168.1.100";
 	public ControllerService() {
 	}
 
@@ -43,8 +43,13 @@ public class ControllerService extends Service {
 	
 	public class ControllerServiceBinder extends Binder {
 		public void sendCommand(String command) {
-			printWriter.write(command);
-			printWriter.flush();
+			try {
+				printWriter.write(command);
+				printWriter.flush();
+			} catch (Exception e) {
+				commandResultListener.commandResultArrived("neterror", null);
+			}
+
 		}
 		
 		public void addCommandResultListener(CommandResultListener listener) {
@@ -70,10 +75,12 @@ public class ControllerService extends Service {
 				initJsonObject.put("name", "pad");
 				printWriter.write(initJsonObject.toString()+"\n");
 				printWriter.flush();
-				commandResultListener.commandResultArrived("netconnected");
+				commandResultListener.commandResultArrived("netconnected", null);
+				NetworkReadThread readThread = new NetworkReadThread();
+				readThread.start();
 			} catch (IOException e) {
 				e.printStackTrace();
-				commandResultListener.commandResultArrived("neterror");
+				commandResultListener.commandResultArrived("neterror", null);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -92,16 +99,22 @@ public class ControllerService extends Service {
 					String line = "";  
 	                buffer="";  
 	                while ((line = bufferedReader.readLine()) != null) {  
-	                    buffer = line + buffer;  
+		                JSONObject jsonObject = new JSONObject(line);
+		                String result = jsonObject.getString("result");
+		                String param = jsonObject.getString("part");
+		                commandResultListener.commandResultArrived(result, param);
+
 	                }  
-	                JSONObject jsonObject = new JSONObject(buffer);
-	                String result = jsonObject.getString("result");
-	                commandResultListener.commandResultArrived(result);
+	                //JSONObject jsonObject = new JSONObject(buffer);
+	                //String result = jsonObject.getString("result");
+	                //String param = jsonObject.getString("part");
+	                //commandResultListener.commandResultArrived(result, param);
 				}
 
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				commandResultListener.commandResultArrived("neterror", null);
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
