@@ -426,6 +426,56 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 		
+	public void clickedFrontWindowSheetingOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FRONTWINDOWSHEETINGON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedFrontWindowSheetingOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FRONTWINDOWSHEETINGOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedSkyLightSheetingOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SKYLIGHTSHEETINGON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedSkyLightSheetingOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SKYLIGHTSHEETINGOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedLeftWindowSheetingOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.LEFTWINDOWSHEETINGON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedLeftWindowSheetingOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.LEFTWINDOWSHEETINGOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedRightWindowSheetingOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.RIGHTWINDOWSHEETINGON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedRightWindowSheetingOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.RIGHTWINDOWSHEETINGOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedBackWindowSheetingOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BACKWINDOWSHEETINGON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedBackWindowSheetingOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BACKWINDOWSHEETINGOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+
 	public void clickFrontDoorLockOpen(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.FRONTDOORCLOSE);
 		controllerServiceBinder.sendCommand(command);
@@ -584,6 +634,36 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 	
 	public void clickedModeDriving(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.DRIVING);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeWakeUp(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.WAKEUP);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeEntertainment(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.ENTERTAINMENT);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeFullScreen(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FULLSCREEN);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeCinema(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.CINEMA);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeSleep(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SLEEP);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeShowOver(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SHOWOVER);
 		controllerServiceBinder.sendCommand(command);
 	}
 	

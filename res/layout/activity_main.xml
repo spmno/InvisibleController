@@ -482,20 +482,20 @@
         android:onClick="clickFrontDoorOpen" />
     
     <Button
-        android:id="@+id/buttonFrontDoorOff"
+        android:id="@+id/buttonFrontDoorClose1"
         android:layout_column="2"
         android:layout_gravity="fill"
         android:layout_row="12"
-        android:text="@string/Off" 
-        android:onClick="clickFrontDoorClose" />
+        android:text="@string/Close1" 
+        android:onClick="clickFrontDoorClose1" />
        
     <Button
-        android:id="@+id/buttonFrontDoorStop"
+        android:id="@+id/buttonFrontDoorClose2"
         android:layout_column="3"
         android:layout_gravity="fill"
         android:layout_row="12"
-        android:text="@string/Stop" 
-        android:onClick="clickFrontDoorStop" />
+        android:text="@string/Close2" 
+        android:onClick="clickFrontDoorClose2" />
     
     <TextView
         android:id="@+id/textViewBackDoor"
@@ -513,20 +513,20 @@
         android:onClick="clickBackDoorOpen" />
     
     <Button
-        android:id="@+id/buttonBackDoorOff"
+        android:id="@+id/buttonBackDoorClose1"
         android:layout_column="2"
         android:layout_gravity="fill"
         android:layout_row="13"
-        android:text="@string/Off" 
-        android:onClick="clickBackDoorClose" />
+        android:text="@string/Close1" 
+        android:onClick="clickBackDoorClose1" />
        
     <Button
-        android:id="@+id/buttonBackDoorStop"
+        android:id="@+id/buttonBackDoorClose2"
         android:layout_column="3"
         android:layout_gravity="fill"
         android:layout_row="13"
-        android:text="@string/Stop" 
-        android:onClick="clickBackDoorStop" />
+        android:text="@string/Close2" 
+        android:onClick="clickBackDoorClose2" />
     
     <TextView
         android:id="@+id/textViewTailDoor"
@@ -708,17 +708,11 @@
         android:text="B2" 
         android:onClick="clickB2" />
     
-    <TextView
-        android:id="@+id/textViewPower"
-        android:layout_column="0"
-        android:layout_row="18"
-        android:text="@string/Power12V"
-        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/PowerManage"
         android:layout_column="0"
-        android:layout_row="19"
+        android:layout_row="18"
         android:text="@string/PowerManager"
         android:textSize="40sp" />
     
@@ -726,7 +720,7 @@
         android:id="@+id/frontWindowSheetingOnButton"
         android:layout_column="1"
         android:layout_gravity="fill"
-        android:layout_row="19"
+        android:layout_row="18"
         android:text="@string/FrontWindowSheetOn" 
         android:onClick="clickedFrontWindowSheetingOn" />
     
@@ -734,7 +728,7 @@
         android:id="@+id/frontWindowSheetingOffButton"
         android:layout_column="2"
         android:layout_gravity="fill"
-        android:layout_row="19"
+        android:layout_row="18"
         android:text="@string/FrontWindowSheetOff" 
         android:onClick="clickedFrontWindowSheetingOff" />
     
@@ -742,7 +736,7 @@
         android:id="@+id/skyLightSheetingOnButton"
         android:layout_column="3"
         android:layout_gravity="fill"
-        android:layout_row="19"
+        android:layout_row="18"
         android:text="@string/SkyLightSheetOn" 
         android:onClick="clickedSkyLightSheetingOn" />
     
@@ -750,7 +744,7 @@
         android:id="@+id/skyLightSheetingOffButton"
         android:layout_column="4"
         android:layout_gravity="fill"
-        android:layout_row="19"
+        android:layout_row="18"
         android:text="@string/SkyLightSheetOff" 
         android:onClick="clickedSkyLightSheetingOff" />
     
@@ -758,7 +752,7 @@
         android:id="@+id/leftWindowSheetingOnButton"
         android:layout_column="5"
         android:layout_gravity="fill"
-        android:layout_row="19"
+        android:layout_row="18"
         android:text="@string/LeftWindowSheetOn" 
         android:onClick="clickedLeftWindowSheetingOn" />
 
@@ -768,7 +762,7 @@
         android:id="@+id/leftWindowSheetingOffButton"
         android:layout_column="1"
         android:layout_gravity="fill"
-        android:layout_row="20"
+        android:layout_row="19"
         android:text="@string/LeftWindowSheetOff" 
         android:onClick="clickedLeftWindowSheetingOff" />
     
@@ -776,7 +770,7 @@
         android:id="@+id/rightWindowSheetingOnButton"
         android:layout_column="2"
         android:layout_gravity="fill"
-        android:layout_row="20"
+        android:layout_row="19"
         android:text="@string/RightWindowSheetOn" 
         android:onClick="clickedRightWindowSheetingOn" />
     
@@ -784,7 +778,7 @@
         android:id="@+id/rightWindowSheetingOffButton"
         android:layout_column="3"
         android:layout_gravity="fill"
-        android:layout_row="20"
+        android:layout_row="19"
         android:text="@string/RightWindowSheetOff" 
         android:onClick="clickedRightWindowSheetingOff" />
     
@@ -792,7 +786,7 @@
         android:id="@+id/backWindowSheetingOnButton"
         android:layout_column="4"
         android:layout_gravity="fill"
-        android:layout_row="20"
+        android:layout_row="19"
         android:text="@string/BackWindowSheetOn" 
         android:onClick="clickedBackWindowSheetingOn" />
     
@@ -800,14 +794,14 @@
         android:id="@+id/backWindowSheetingOffButton"
         android:layout_column="5"
         android:layout_gravity="fill"
-        android:layout_row="20"
+        android:layout_row="19"
         android:text="@string/BackWindowSheetOff" 
         android:onClick="clickedBackWindowSheetingOff" />
     
     <TextView
         android:id="@+id/mode"
         android:layout_column="0"
-        android:layout_row="21"
+        android:layout_row="20"
         android:text="@string/Mode"
         android:textSize="40sp" />
     
@@ -815,7 +809,7 @@
         android:id="@+id/modeReset"
         android:layout_column="1"
         android:layout_gravity="fill"
-        android:layout_row="21"
+        android:layout_row="20"
         android:text="@string/ModeReset" 
         android:onClick="clickedModeReset" />
       
@@ -823,7 +817,7 @@
         android:id="@+id/modeNearTheCar"
         android:layout_column="2"
         android:layout_gravity="fill"
-        android:layout_row="21"
+        android:layout_row="20"
         android:text="@string/NearTheCar" 
         android:onClick="clickedModeNearTheCar" />
     
@@ -831,7 +825,7 @@
         android:id="@+id/modeBackScreenShow"
         android:layout_column="3"
         android:layout_gravity="fill"
-        android:layout_row="21"
+        android:layout_row="20"
         android:text="@string/BackScreenShow"
         android:enabled="true"
         android:onClick="clickedBackScreenShow" />
@@ -840,7 +834,7 @@
         android:id="@+id/modeOpenTheDoor"
         android:layout_column="4"
         android:layout_gravity="fill"
-        android:layout_row="21"
+        android:layout_row="20"
         android:text="@string/OpenTheDoor"
         android:enabled="true"
         android:onClick="clickedModeOpenTheDoor" />
@@ -849,30 +843,70 @@
         android:id="@+id/modeCloseTheDoor"
         android:layout_column="5"
         android:layout_gravity="fill"
-        android:layout_row="21"
+        android:layout_row="20"
         android:text="@string/CloseTheDoor"
         android:onClick="clickedModeCloseTheDoor" />
-               
+    
+    <Button
+        android:id="@+id/modeWakeUp"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="21"
+        android:text="@string/WakeUp"
+        android:onClick="clickedModeWakeUp" />  
+                       
     <Button
         android:id="@+id/modeDriving"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="21"
+        android:text="@string/Driving"
+        android:onClick="clickedModeDriving" />
+    
+    <Button
+        android:id="@+id/modeEntertainment"
+        android:layout_column="3"
+        android:layout_gravity="fill"
+        android:layout_row="21"
+        android:text="@string/Entertainment"
+        android:onClick="clickedModeEntertainment" />      
+        
+    <Button
+        android:id="@+id/modeFullScreen"
+        android:layout_column="4"
+        android:layout_gravity="fill"
+        android:layout_row="21"
+        android:text="@string/FullScreen"
+        android:onClick="clickedModeFullScreen" />   
+        
+    <Button
+        android:id="@+id/modeCinema"
+        android:layout_column="5"
+        android:layout_gravity="fill"
+        android:layout_row="21"
+        android:text="@string/Cinema"
+        android:onClick="clickedModeCinema" />  
+    
+    <Button
+        android:id="@+id/modeSleep"
         android:layout_column="1"
         android:layout_gravity="fill"
         android:layout_row="22"
-        android:text="@string/Driving"
-        android:onClick="clickedModeDriving" />
-                    
+        android:text="@string/Sleep"
+        android:onClick="clickedModeSleep" />
+    
     <Button
-        android:id="@+id/modeAutoDriving"
+        android:id="@+id/modeShowOver"
         android:layout_column="2"
         android:layout_gravity="fill"
         android:layout_row="22"
-        android:text="@string/AutoDriving"
-        android:onClick="clickedModeAutoDriving" />
+        android:text="@string/ShowOver"
+        android:onClick="clickedModeShowOver" />
     
     <TextView
         android:id="@+id/media"
         android:layout_column="0"
-        android:layout_row="23"
+        android:layout_row="22"
         android:text="@string/Media"
         android:textSize="40sp" />
     
@@ -880,7 +914,7 @@
         android:id="@+id/mediaPlay"
         android:layout_column="1"
         android:layout_gravity="fill"
-        android:layout_row="23"
+        android:layout_row="22"
         android:text="@string/Play" 
         android:onClick="clickedMediaPlay" />
       
@@ -888,7 +922,7 @@
         android:id="@+id/mediaStop"
         android:layout_column="2"
         android:layout_gravity="fill"
-        android:layout_row="23"
+        android:layout_row="22"
         android:text="@string/Stop" 
         android:onClick="clickedMediaStop" />    
         
@@ -896,7 +930,7 @@
         android:id="@+id/mediaPause"
         android:layout_column="3"
         android:layout_gravity="fill"
-        android:layout_row="23"
+        android:layout_row="22"
         android:text="@string/Pause" 
         android:onClick="clickedMediaPause" />  
         
@@ -904,7 +938,7 @@
     <TextView
         android:id="@+id/lightAdjust"
         android:layout_column="0"
-        android:layout_row="24"
+        android:layout_row="23"
         android:text="@string/LightTest"
         android:textSize="40sp" />
     
@@ -912,7 +946,7 @@
         android:id="@+id/lightAdjustButton"
         android:layout_column="1"
         android:layout_gravity="fill"
-        android:layout_row="24"
+        android:layout_row="23"
         android:text="@string/AdjustLight" 
         android:onClick="lightTestActivity" />
     

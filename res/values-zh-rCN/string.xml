@@ -51,6 +51,8 @@
 	<string name="Pause">暂停</string>
     <string name="On">开</string>
     <string name="Off">关</string>
+    <string name="Close1">关1</string>
+    <string name="Close2">关2</string>
     <string name="Reset">复位</string>
     <string name="IrisDoor">虹膜门</string>
     <string name="FrontDoor">前门</string>
@@ -95,7 +97,13 @@
     <string name="OpenTheDoor">开门</string>
     <string name="CloseTheDoor">关门</string>
     <string name="Driving">驾驶</string>
+    <string name="Entertainment">娱乐</string>
+    <string name="FullScreen">大屏</string>
+    <string name="Cinema">影院</string>
+    <string name="Sleep">睡眠</string>
+    <string name="ShowOver">演示结束</string>
     <string name="AutoDriving">自动驾驶</string>
+    <string name="WakeUp">唤醒</string>
     <string name="Media">媒体</string>
     <string name="Play">播放</string>
 </resources>

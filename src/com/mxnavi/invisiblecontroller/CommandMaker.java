@@ -69,9 +69,13 @@ public class CommandMaker {
 		IRISDOORSTOP,
 		FRONTDOOROPEN,
 		FRONTDOORCLOSE,
+		FRONTDOORCLOSE1,
+		FRONTDOORCLOSE2,
 		FRONTDOORSTOP,
 		BACKDOOROPEN,
 		BACKDOORCLOSE,
+		BACKDOORCLOSE1,
+		BACKDOORCLOSE2,
 		BACKDOORSTOP,
 		TAILDOOROPEN,
 		TAILDOORCLOSE,
@@ -128,7 +132,13 @@ public class CommandMaker {
 		OPENAIR,							
 		OPENTHEDOOR,						//开门模式
 		CLOSETHEDOOR,						//关门模式
+		WAKEUP,
 		DRIVING,							//驾驶模式
+		ENTERTAINMENT,
+		FULLSCREEN,
+		CINEMA,
+		SLEEP,
+		SHOWOVER,
 		AUTODRIVING,						//自动驾驶模式
 		
 	}
@@ -454,6 +464,16 @@ public class CommandMaker {
 			part = "front-door";
 			action = "close";
 			break;
+		case FRONTDOORCLOSE1:
+			type = "single";
+			part = "front-door";
+			action = "close1";
+			break;
+		case FRONTDOORCLOSE2:
+			type = "single";
+			part = "front-door";
+			action = "close2";
+			break;
 		case FRONTDOORSTOP:
 			type = "single";
 			part = "front-door";
@@ -468,6 +488,16 @@ public class CommandMaker {
 			type = "single";
 			part = "back-door";
 			action = "close";
+			break;
+		case BACKDOORCLOSE1:
+			type = "single";
+			part = "back-door";
+			action = "close1";
+			break;
+		case BACKDOORCLOSE2:
+			type = "single";
+			part = "back-door";
+			action = "close2";
 			break;
 		case BACKDOORSTOP:
 			type = "single";
@@ -661,12 +691,12 @@ public class CommandMaker {
 			break;
 		case RIGHTWINDOWSHEETINGON:
 			type = "single";
-			part = "right-window-sheet";
+			part = "right-window-sheeting";
 			action = "on";
 			break;
 		case RIGHTWINDOWSHEETINGOFF:
 			type = "single";
-			part = "right-window-sheet";
+			part = "right-window-sheeting";
 			action = "off";
 			break;
 		case BACKWINDOWSHEETINGON:
@@ -744,10 +774,38 @@ public class CommandMaker {
 			part = "all";
 			action = "close-the-door";
 			break;
+		case WAKEUP:
+			type = "mode";
+			part = "all";
+			action = "wake-up";
+			break;
 		case DRIVING:
 			type = "mode";
 			part = "all";
 			action = "driving";
+			break;
+		case ENTERTAINMENT:
+			type = "mode";
+			part = "all";
+			action = "entertainment";
+			break;
+		case FULLSCREEN:
+			type = "mode";
+			part = "all";
+			action = "full-screen";
+		case CINEMA:
+			type = "mode";
+			part = "all";
+			action = "cinema";
+		case SLEEP:
+			type = "mode";
+			part = "all";
+			action = "sleep";
+			break;
+		case SHOWOVER:
+			type = "mode";
+			part = "all";
+			action = "show-over";
 			break;
 		case AUTODRIVING:
 			type = "mode";
