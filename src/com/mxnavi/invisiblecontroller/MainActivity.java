@@ -104,8 +104,19 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		((InvisibleControllerApplication)getApplication()).addServerStartedListener(this);
 	}
 	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		android.os.Process.killProcess(android.os.Process.myPid());
+	}
+	
 	public void clickFMBrighten(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.FMLON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickFMBrightenOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FMLOFF);
 		controllerServiceBinder.sendCommand(command);
 	}
 	
@@ -114,9 +125,19 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);		
 	}
 	
+	public void clickFMBrightenOffGradually(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FMOFFGRADUALLY);
+		controllerServiceBinder.sendCommand(command);	
+	}
+	
 	public void clickFMTwinkle(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.FMTWINKLE);
 		controllerServiceBinder.sendCommand(command);	
+	}
+	
+	public void clieckFMTwinkleOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FMTWINKLEOFF);
+		controllerServiceBinder.sendCommand(command);
 	}
 	
 	public void clickFMOff(View v) {
@@ -126,6 +147,11 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 	
 	public void clickHLTwinkle(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.HLTWINKLE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickHLTwinkleOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.HLTWINKLEOFF);
 		controllerServiceBinder.sendCommand(command);
 	}
 	
@@ -139,13 +165,24 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 	
-	public void clickHLBrightenGradually(View v) {
+	
+	public void clickHLBrightenOffGradually(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.HLONGRADUALLY);
+		controllerServiceBinder.sendCommand(command);
+	}
+
+	public void clickHLBrightenGradually(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.HLOFFGRADUALLY);
 		controllerServiceBinder.sendCommand(command);
 	}
 	
 	public void clickDRTwinkle(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.DRTWINKLE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickDRTwinkleOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.DRTWINKLEOFF);
 		controllerServiceBinder.sendCommand(command);
 	}
 	
@@ -164,9 +201,19 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 	
+	public void clickDRBrightenOffGradually(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.DROFFGRADUALLY);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
 	public void clickBMTwinkle(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.BMTWINKLE);
 		controllerServiceBinder.sendCommand(command);	    	
+	}
+	
+	public void clickBMTwinkleOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BMTWINKLEOFF);
+		controllerServiceBinder.sendCommand(command);
 	}
 	
 	public void clickBMOff(View v) {
@@ -184,8 +231,18 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 	
+	public void clickBMBrightenOffGradually(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BMOFFGRADUALLY);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
 	public void clickBSTwinkle(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.BSTWINKLE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickBSTwinkleOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BSTWINKLEOFF);
 		controllerServiceBinder.sendCommand(command);
 	}
 	
@@ -204,8 +261,18 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 	
+	public void clickBSBrightenGraduallyOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BSOFFGRADUALLY);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
 	public void clickBLTwinkle(View v) {
-		String command = commandMaker.make(CommandMaker.Instruct.BLONGRADUALLY);
+		String command = commandMaker.make(CommandMaker.Instruct.BLTWINKLE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickBLTwinkleOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BLTWINKLEOFF);
 		controllerServiceBinder.sendCommand(command);
 	}
 	
@@ -221,6 +288,41 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 	
 	public void clickBLBrightenGradually(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.BLONGRADUALLY);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickBLBrightenOffGradually(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BLOFFGRADUALLY);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickSPTwinkle(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SPTWINKLE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickSPTwinkleOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SPTWINKLEOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickSPBrighten(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SPLON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickSPOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SPLOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickSPBrightenGradually(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SPONGRADUALLY);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickSPBrightenOffGradually(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SPOFFGRADUALLY);
 		controllerServiceBinder.sendCommand(command);
 	}
 	
@@ -334,10 +436,33 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);	
 	}
 	
+	public void clickCoDriverChairMotorZ1(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.CODRIVERCHAIRZ1);
+		controllerServiceBinder.sendCommand(command);	
+	}
 	
+	public void clickCoDriverChairMotorZ2(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.CODRIVERCHAIRZ2);
+		controllerServiceBinder.sendCommand(command);	
+	}
+	
+	public void clickCoDriverChairMotorZ3(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.CODRIVERCHAIRZ3);
+		controllerServiceBinder.sendCommand(command);	
+	}
 	
 	public void clickFrontDoorOpen(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.FRONTDOOROPEN);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickFrontDoorClose1(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FRONTDOORCLOSE1);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickFrontDoorClose2(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FRONTDOORCLOSE2);
 		controllerServiceBinder.sendCommand(command);
 	}
 	
@@ -361,6 +486,8 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 	
+
+	
 	public void clickIrisDoorStop(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.IRISDOORSTOP);
 		controllerServiceBinder.sendCommand(command);
@@ -373,6 +500,16 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 	
 	public void clickBackDoorClose(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.BACKDOORCLOSE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickBackDoorClose1(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BACKDOORCLOSE1);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickBackDoorClose2(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BACKDOORCLOSE2);
 		controllerServiceBinder.sendCommand(command);
 	}
 	
@@ -475,7 +612,107 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		String command = commandMaker.make(CommandMaker.Instruct.BACKWINDOWSHEETINGOFF);
 		controllerServiceBinder.sendCommand(command);
 	}
+	
+	public void clickedAudioPowerOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.AUDIOSYSTEMON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedAudioPowerOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.AUDIOSYSTEMOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedLeftSeatOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.LEFTSEATON);
+		controllerServiceBinder.sendCommand(command);
+	}
 
+	public void clickedLeftSeatOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.LEFTSEATOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedRightSeatOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.RIGHTSEATON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedRightSeatOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.RIGHTSEATOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedDashboardOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.DASHBOARDON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedDashboardOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.DASHBOARDOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedBackMidLightOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BACKMIDLIGHTON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedBackMidLightOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BACKMIDLIGHTOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedBackSideLightOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BACKSIDELIGHTON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedBackSideLightOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BACKSIDELIGHTOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedBackLogoLightOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BACKLOGOLIGHTON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedBackLogoLightOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.BACKLOGOLIGHTOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedFrontDaytimeLightOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FRONTDAYTIMELIGHTON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedFrontDaytimeLightOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FRONTDAYTIMELIGHTOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedFrontMidLightOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FRONTMIDLIGHTON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedFrontMidLightOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.FRONTMIDLIGHTOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedSidePanelLightOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SIDEPANELLIGHTON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedSidePanelLightOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SIDEPANELLIGHTOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
 	public void clickFrontDoorLockOpen(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.FRONTDOORCLOSE);
 		controllerServiceBinder.sendCommand(command);
@@ -485,6 +722,7 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		String command = commandMaker.make(CommandMaker.Instruct.TESTLIGHTON);
 		controllerServiceBinder.sendCommand(command);
 	}
+
 	
 	public void clickLightTestOff(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.TESTLGITHOFF);
@@ -667,6 +905,77 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 	
+	public void clickedModeIris(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.IRISMODE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeReadingForest(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.READINGFOREST);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeSeaWave(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.READINGSEAWARE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeFireplace(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.READINGFIREPLACE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeSleepStarrySky(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SLEEPSTARRYSKY);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeSleepRainyDay(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SLEEPRAINYDAY);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeIpOpen(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.IPOPEN);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeIpClose(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.IPCLOSE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeSeatDriving(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SEATDRIVINGMODE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeSeatLeisure(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SEATLEISUREMODE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeSeatSleep(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SEATSLEEPMODE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeCoSeatDriving(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.COSEATDRIVINGMODE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeCoSeatLeisure(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.COSEATLEISUREMODE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeCoSeatSleep(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.COSEATSLEEPMODE);
+		controllerServiceBinder.sendCommand(command);
+	}
+
+	
 	public void clickedModeAutoDriving(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.AUTODRIVING);
 		controllerServiceBinder.sendCommand(command);
@@ -677,8 +986,8 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 	
-	public void clickedMediaStop(View v) {
-		String command = commandMaker.make(CommandMaker.Instruct.MEDIASTOP);
+	public void clickedMediaExit(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.MEDIAEXIT);
 		controllerServiceBinder.sendCommand(command);
 	}
 	
@@ -713,5 +1022,11 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder = ((InvisibleControllerApplication)getApplication()).getControllerServiceBinder();
 		controllerServiceBinder.addCommandResultListener(this);
 		controllerServiceBinder.connectServer();
+	}
+	
+	@Override
+	public void exit() {
+		controllerServiceBinder = ((InvisibleControllerApplication)getApplication()).getControllerServiceBinder();
+		controllerServiceBinder.disconnectServer();
 	}
 }

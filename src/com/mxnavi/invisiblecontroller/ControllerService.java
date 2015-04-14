@@ -21,6 +21,7 @@ public class ControllerService extends Service {
 	static private CommandResultListener commandResultListener;
 	PrintWriter printWriter;
 	private final String ipAddress = "192.168.1.100";
+	static boolean readFlag = true;
 	public ControllerService() {
 	}
 
@@ -40,7 +41,6 @@ public class ControllerService extends Service {
 		super.onDestroy();
 	}
 	
-	
 	public class ControllerServiceBinder extends Binder {
 		public void sendCommand(String command) {
 			try {
@@ -59,6 +59,15 @@ public class ControllerService extends Service {
 		public void connectServer() {
 			NetworkStartThread networkThread = new NetworkStartThread();
 			networkThread.start();
+		}
+		
+		public void disconnectServer() {
+			try {
+				clientSocket.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -95,7 +104,7 @@ public class ControllerService extends Service {
 		public void run() {
 			
 			 try {
-				while(true) {
+				while(readFlag) {
 					String line = "";  
 	                buffer="";  
 	                while ((line = bufferedReader.readLine()) != null) {  
@@ -105,10 +114,6 @@ public class ControllerService extends Service {
 		                commandResultListener.commandResultArrived(result, param);
 
 	                }  
-	                //JSONObject jsonObject = new JSONObject(buffer);
-	                //String result = jsonObject.getString("result");
-	                //String param = jsonObject.getString("part");
-	                //commandResultListener.commandResultArrived(result, param);
 				}
 
 			} catch (IOException e) {

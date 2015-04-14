@@ -7,29 +7,67 @@ public class CommandMaker {
 	static final String END_COMMAND_SIGN = "\n";
 	enum Instruct {
 		FMTWINKLE,
+		FMTWINKLEOFF,
 		FMONGRADUALLY,
+		FMOFFGRADUALLY,
 		FMLON,								//前中灯开
 		FMLOFF,								//前中灯关
 		HLTWINKLE,
+		HLTWINKLEOFF,
 		HLONGRADUALLY,
+		HLOFFGRADUALLY,
 		HLON,								
 		HLOFF,		
 		DRTWINKLE,
+		DRTWINKLEOFF,
 		DRONGRADUALLY,
+		DROFFGRADUALLY,
 		DRON,								
 		DROFF,	
 		BMTWINKLE,
+		BMTWINKLEOFF,
 		BMONGRADUALLY,
+		BMOFFGRADUALLY,
 		BMLON,								
 		BMLOFF,	
 		BSTWINKLE,
+		BSTWINKLEOFF,
 		BSONGRADUALLY,
+		BSOFFGRADUALLY,
 		BSLON,								
 		BSLOFF,	
 		BLTWINKLE,
+		BLTWINKLEOFF,
 		BLONGRADUALLY,
+		BLOFFGRADUALLY,
 		BLLON,								
 		BLLOFF,	
+		SPTWINKLE,
+		SPTWINKLEOFF,
+		SPONGRADUALLY,
+		SPOFFGRADUALLY,
+		SPLON,								
+		SPLOFF,	
+		AUDIOSYSTEMON,
+		AUDIOSYSTEMOFF,
+		RIGHTSEATON,
+		RIGHTSEATOFF,
+		LEFTSEATON,
+		LEFTSEATOFF,
+		DASHBOARDON,
+		DASHBOARDOFF,
+		BACKMIDLIGHTON,
+		BACKMIDLIGHTOFF,
+		BACKSIDELIGHTON,
+		BACKSIDELIGHTOFF,
+		BACKLOGOLIGHTON,
+		BACKLOGOLIGHTOFF,
+		FRONTDAYTIMELIGHTON,
+		FRONTDAYTIMELIGHTOFF,
+		FRONTMIDLIGHTON,
+		FRONTMIDLIGHTOFF,
+		SIDEPANELLIGHTON,
+		SIDEPANELLIGHTOFF,
 		CHAIRSTART,							//椅子启动
 		CHAIRHEADER,						//椅子头部调节
 		CHAIRHEADERUP,						//椅子头部向上
@@ -125,6 +163,7 @@ public class CommandMaker {
 		RELAY4OFF,
 		MEDIAPLAY,
 		MEDIASTOP,
+		MEDIAEXIT,
 		MEDIAPAUSE,
 		RESET,
 		NEARTHECAR,
@@ -140,7 +179,20 @@ public class CommandMaker {
 		SLEEP,
 		SHOWOVER,
 		AUTODRIVING,						//自动驾驶模式
-		
+		IRISMODE,
+		READINGFOREST,
+		READINGSEAWARE,
+		READINGFIREPLACE,
+		SLEEPSTARRYSKY,
+		SLEEPRAINYDAY,
+		IPOPEN,
+		IPCLOSE,
+		SEATDRIVINGMODE,
+		SEATLEISUREMODE,
+		SEATSLEEPMODE,
+		COSEATDRIVINGMODE,
+		COSEATLEISUREMODE,
+		COSEATSLEEPMODE
 	}
 	
 	public String make(Instruct instruct) {
@@ -155,10 +207,20 @@ public class CommandMaker {
 			part = "front-mid-light";
 			action = "twinkle";
 			break;
+		case FMTWINKLEOFF:
+			type = "single";
+			part = "front-mid-light";
+			action = "twinkle-off";
+			break;
 		case FMONGRADUALLY:
 			type = "single";
 			part = "front-mid-light";
 			action = "on-gradually";
+			break;
+		case FMOFFGRADUALLY:
+			type = "single";
+			part = "front-mid-light";
+			action = "off-gradually";
 			break;
 		case FMLON:
 			type = "single";
@@ -175,10 +237,19 @@ public class CommandMaker {
 			part = "head-light";
 			action = "twinkle";
 			break;
+		case HLTWINKLEOFF:
+			type = "single";
+			part = "head-light";
+			action = "twinkle-off";
+			break;
 		case HLONGRADUALLY:
 			type = "single";
 			part = "head-light";
 			action = "on-gradually";
+		case HLOFFGRADUALLY:
+			type = "single";
+			part = "head-light";
+			action = "off-gradually";
 		case HLON:
 			type = "single";
 			part = "head-light";
@@ -194,10 +265,20 @@ public class CommandMaker {
 			part = "daytime-running-light";
 			action = "twinkle";
 			break;
+		case DRTWINKLEOFF:
+			type = "single";
+			part = "daytime-running-light";
+			action = "twinkle-off";
+			break;
 		case DRONGRADUALLY:
 			type = "single";
 			part = "daytime-running-light";
 			action = "on-gradually";
+			break;
+		case DROFFGRADUALLY:
+			type = "single";
+			part = "daytime-running-light";
+			action = "off-gradually";
 			break;
 		case DRON:
 			type = "single";
@@ -214,10 +295,20 @@ public class CommandMaker {
 			part = "back-mid-light";
 			action = "twinkle";
 			break;
+		case BMTWINKLEOFF:
+			type = "single";
+			part = "back-mid-light";
+			action = "twinkle-off";
+			break;
 		case BMONGRADUALLY:
 			type = "single";
 			part = "back-mid-light";
 			action = "on-gradually";
+			break;
+		case BMOFFGRADUALLY:
+			type = "single";
+			part = "back-mid-light";
+			action = "off-gradually";
 			break;
 		case BMLON:
 			type = "single";
@@ -234,10 +325,20 @@ public class CommandMaker {
 			part = "back-side-light";
 			action = "twinkle";
 			break;
+		case BSTWINKLEOFF:
+			type = "single";
+			part = "back-side-light";
+			action = "twinkle-off";
+			break;
 		case BSONGRADUALLY:
 			type = "single";
 			part = "back-side-light";
 			action = "on-gradually";
+			break;
+		case BSOFFGRADUALLY:
+			type = "single";
+			part = "back-side-light";
+			action = "off-gradually";
 			break;
 		case BSLON:
 			type = "single";
@@ -254,10 +355,20 @@ public class CommandMaker {
 			part = "back-logo-light";
 			action = "twinkle";
 			break;
+		case BLTWINKLEOFF:
+			type = "single";
+			part = "back-logo-light";
+			action = "twinkle-off";
+			break;
 		case BLONGRADUALLY:
 			type = "single";
 			part = "back-logo-light";
 			action = "on-gradually";
+			break;
+		case BLOFFGRADUALLY:
+			type = "single";
+			part = "back-logo-light";
+			action = "off-gradually";
 			break;
 		case BLLON:
 			type = "single";
@@ -267,6 +378,36 @@ public class CommandMaker {
 		case BLLOFF:
 			type = "single";
 			part = "back-logo-light";
+			action = "off";
+			break;
+		case SPTWINKLE:
+			type = "single";
+			part = "side-panel-light";
+			action = "twinkle";
+			break;
+		case SPTWINKLEOFF:
+			type = "single";
+			part = "side-panel-light";
+			action = "twinkle-off";
+			break;
+		case SPONGRADUALLY:
+			type = "single";
+			part = "side-panel-light";
+			action = "on-gradually";
+			break;
+		case SPOFFGRADUALLY:
+			type = "single";
+			part = "side-panel-light";
+			action = "off-gradually";
+			break;
+		case SPLON:
+			type = "single";
+			part = "side-panel-light";
+			action = "on";
+			break;
+		case SPLOFF:
+			type = "single";
+			part = "side-panel-light";
 			action = "off";
 			break;
 		case CHAIRSTART:
@@ -729,6 +870,106 @@ public class CommandMaker {
 			part = "relay3";
 			action = "off2";
 			break;
+		case AUDIOSYSTEMON:
+			type = "single";
+			part = "audio-system";
+			action = "on";
+			break;
+		case AUDIOSYSTEMOFF:
+			type = "single";
+			part = "audio-system";
+			action = "off";
+			break;
+		case RIGHTSEATON:
+			type = "single";
+			part = "right-seat-power";
+			action = "on";
+			break;
+		case RIGHTSEATOFF:
+			type = "single";
+			part = "right-seat-power";
+			action = "off";
+			break;
+		case LEFTSEATON:
+			type = "single";
+			part = "left-seat-power";
+			action = "on";
+			break;
+		case LEFTSEATOFF:
+			type = "single";
+			part = "left-seat-power";
+			action = "off";
+			break;
+		case DASHBOARDON:
+			type = "single";
+			part = "dashboard-power";
+			action = "on";
+			break;
+		case DASHBOARDOFF:
+			type = "single";
+			part = "dashboard-power";
+			action = "off";
+			break;
+		case BACKMIDLIGHTON:
+			type = "single";
+			part = "back-mid-light-power";
+			action = "on";
+			break;
+		case BACKMIDLIGHTOFF:
+			type = "single";
+			part = "back-mid-light-power";
+			action = "off";
+			break;
+		case BACKSIDELIGHTON:
+			type = "single";
+			part = "back-side-light-power";
+			action = "on";
+			break;
+		case BACKSIDELIGHTOFF:
+			type = "single";
+			part = "back-side-light-power";
+			action = "off";
+			break;
+		case BACKLOGOLIGHTON:
+			type = "single";
+			part = "back-logo-light-power";
+			action = "on";
+			break;
+		case BACKLOGOLIGHTOFF:
+			type = "single";
+			part = "back-logo-light-power";
+			action = "off";
+			break;
+		case FRONTDAYTIMELIGHTON:
+			type = "single";
+			part = "front-daytime-light-power";
+			action = "on";
+			break;
+		case FRONTDAYTIMELIGHTOFF:
+			type = "single";
+			part = "front-daytime-light-power";
+			action = "off";
+			break;
+		case FRONTMIDLIGHTON:
+			type = "single";
+			part = "front-mid-light-power";
+			action = "on";
+			break;
+		case FRONTMIDLIGHTOFF:
+			type = "single";
+			part = "front-mid-light-power";
+			action = "off";
+			break;
+		case SIDEPANELLIGHTON:
+			type = "single";
+			part = "side-panel-light-power";
+			action = "on";
+			break;
+		case SIDEPANELLIGHTOFF:
+			type = "single";
+			part = "side-panel-light-power";
+			action = "off";
+			break;
 		case MEDIAPLAY:
 			type = "single";
 			part = "media-player";
@@ -743,6 +984,11 @@ public class CommandMaker {
 			type = "single";
 			part = "media-player";
 			action = "pause";
+			break;
+		case MEDIAEXIT:
+			type = "single";
+			part = "media-player";
+			action = "exit";
 			break;
 		case RESET:
 			type = "mode";
@@ -806,6 +1052,76 @@ public class CommandMaker {
 			type = "mode";
 			part = "all";
 			action = "show-over";
+			break;
+		case IRISMODE:
+			type = "mode";
+			part = "all";
+			action = "iris";
+			break;
+		case READINGFOREST:
+			type = "mode";
+			part = "all";
+			action = "reading-forest";
+			break;
+		case READINGSEAWARE:
+			type = "mode";
+			part = "all";
+			action = "reading-sea-wave";
+			break;
+		case READINGFIREPLACE:
+			type = "mode";
+			part = "all";
+			action = "reading-fireplace";
+			break;
+		case SLEEPSTARRYSKY:
+			type = "mode";
+			part = "all";
+			action = "sleep-starry-sky";
+			break;
+		case SLEEPRAINYDAY:
+			type = "mode";
+			part = "all";
+			action = "sleep-rainy-day";
+			break;
+		case IPOPEN:
+			type = "mode";
+			part = "all";
+			action = "ip-open";
+			break;
+		case IPCLOSE:
+			type = "mode";
+			part = "all";
+			action = "ip-close";
+			break;
+		case SEATDRIVINGMODE:
+			type = "mode";
+			part = "all";
+			action = "seat-driving";
+			break;
+		case SEATLEISUREMODE:
+			type = "mode";
+			part = "all";
+			action = "seat-leisure";
+			break;
+		case SEATSLEEPMODE:
+			type = "mode";
+			part = "all";
+			action = "seat-sleep";
+			break;
+		case COSEATDRIVINGMODE:
+			type = "mode";
+			part = "all";
+			action = "co-seat-driving";
+			break;
+		case COSEATLEISUREMODE:
+			type = "mode";
+			part = "all";
+			action = "co-seat-leisure";
+			break;
+		case COSEATSLEEPMODE:
+			type = "mode";
+			part = "all";
+			action = "co-seat-sleep";
 			break;
 		case AUTODRIVING:
 			type = "mode";
