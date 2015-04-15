@@ -192,7 +192,9 @@ public class CommandMaker {
 		SEATSLEEPMODE,
 		COSEATDRIVINGMODE,
 		COSEATLEISUREMODE,
-		COSEATSLEEPMODE
+		COSEATSLEEPMODE,
+		TAILDOOROPENMODE,
+		TAILDOORCLOSEMODE
 	}
 	
 	public String make(Instruct instruct) {
@@ -1122,6 +1124,16 @@ public class CommandMaker {
 			type = "mode";
 			part = "all";
 			action = "co-seat-sleep";
+			break;
+		case TAILDOOROPENMODE:
+			type = "mode";
+			part = "all";
+			action = "tail-door-open";
+			break;
+		case TAILDOORCLOSEMODE:
+			type = "mode";
+			part = "all";
+			action = "tail-door-close";
 			break;
 		case AUTODRIVING:
 			type = "mode";

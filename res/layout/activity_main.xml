@@ -10,7 +10,7 @@
     android:layout_gravity="top"
     android:columnCount="6"
     android:layout_margin="5dp"
-    android:rowCount="35" >
+    android:rowCount="36" >
 
     <TextView
         android:id="@+id/textView1"
@@ -1287,10 +1287,26 @@
         android:text="@string/CoSeatSleep"
         android:onClick="clickedModeCoSeatSleep" />
     
+    <Button
+        android:id="@+id/modeTailDoorOpen"
+        android:layout_column="1"
+        android:layout_gravity="fill"
+        android:layout_row="33"
+        android:text="@string/TailDoorOpen"
+        android:onClick="clickedModeTailDoorOpen" />
+    
+    <Button
+        android:id="@+id/modeTailDoorClose"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="33"
+        android:text="@string/TailDoorClose"
+        android:onClick="clickedModeTailDoorClose" />
+    
     <TextView
         android:id="@+id/media"
         android:layout_column="0"
-        android:layout_row="33"
+        android:layout_row="34"
         android:text="@string/Media"
         android:textSize="40sp" />
     
@@ -1298,7 +1314,7 @@
         android:id="@+id/mediaPlay"
         android:layout_column="1"
         android:layout_gravity="fill"
-        android:layout_row="33"
+        android:layout_row="34"
         android:text="@string/Play" 
         android:onClick="clickedMediaPlay" />
       
@@ -1306,7 +1322,7 @@
         android:id="@+id/mediaPause"
         android:layout_column="2"
         android:layout_gravity="fill"
-        android:layout_row="33"
+        android:layout_row="34"
         android:text="@string/Pause" 
         android:onClick="clickedMediaPause" />    
         
@@ -1314,7 +1330,7 @@
         android:id="@+id/mediaExit"
         android:layout_column="3"
         android:layout_gravity="fill"
-        android:layout_row="33"
+        android:layout_row="34"
         android:text="@string/Exit" 
         android:onClick="clickedMediaExit" />  
         
@@ -1322,7 +1338,7 @@
     <TextView
         android:id="@+id/lightAdjust"
         android:layout_column="0"
-        android:layout_row="34"
+        android:layout_row="35"
         android:text="@string/LightTest"
         android:textSize="40sp" />
     
@@ -1330,7 +1346,7 @@
         android:id="@+id/lightAdjustButton"
         android:layout_column="1"
         android:layout_gravity="fill"
-        android:layout_row="34"
+        android:layout_row="35"
         android:text="@string/AdjustLight" 
         android:onClick="lightTestActivity" />
     

@@ -140,6 +140,8 @@
     <string name="CoSeatDriving">副座驾驶</string>
     <string name="CoSeatLeisure">副座休闲</string>
     <string name="CoSeatSleep">副座睡眠</string>
+    <string name="TailDoorOpen">尾门开</string>
+    <string name="TailDoorClose">尾门关</string>
     <string name="AutoDriving">自动驾驶</string>
     <string name="WakeUp">唤醒</string>
     <string name="Media">媒体</string>

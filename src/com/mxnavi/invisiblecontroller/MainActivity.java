@@ -975,6 +975,15 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 
+	public void clickedModeTailDoorOpen(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.TAILDOOROPENMODE);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickedModeTailDoorClose(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.TAILDOORCLOSEMODE);
+		controllerServiceBinder.sendCommand(command);
+	}
 	
 	public void clickedModeAutoDriving(View v) {
 		String command = commandMaker.make(CommandMaker.Instruct.AUTODRIVING);
