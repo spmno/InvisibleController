@@ -1005,6 +1005,26 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 	
+	public void clickedRebootComputer(View v) {
+		Toast.makeText(getApplicationContext(), 
+    			"重启",
+    			Toast.LENGTH_SHORT).show();
+   	    Dialog alertDialog = new AlertDialog.Builder(this). 
+             setTitle("重启"). 
+             setMessage("是否需要重启"). 
+             setIcon(R.drawable.ic_launcher). 
+             setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                 @Override
+                 public void onClick(DialogInterface dialog, int which) {
+                  // TODO Auto-generated method stub
+             		String command = commandMaker.make(CommandMaker.Instruct.REBOOTCOMPUTER);
+            		controllerServiceBinder.sendCommand(command);
+                 }
+                }).setNegativeButton("取消", null).create(); 
+        alertDialog.show();
+
+	}
+	
 	@Override
 	public void commandResultArrived(String command, String params) {
 		// TODO Auto-generated method stub

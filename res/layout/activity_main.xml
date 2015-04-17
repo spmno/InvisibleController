@@ -1350,5 +1350,13 @@
         android:text="@string/AdjustLight" 
         android:onClick="lightTestActivity" />
     
+    <Button
+        android:id="@+id/rebootComputer"
+        android:layout_column="2"
+        android:layout_gravity="fill"
+        android:layout_row="35"
+        android:text="@string/RebootComputer" 
+        android:onClick="clickedRebootComputer" />
+    
 </GridLayout>
 </ScrollView>

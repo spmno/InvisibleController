@@ -194,7 +194,8 @@ public class CommandMaker {
 		COSEATLEISUREMODE,
 		COSEATSLEEPMODE,
 		TAILDOOROPENMODE,
-		TAILDOORCLOSEMODE
+		TAILDOORCLOSEMODE,
+		REBOOTCOMPUTER,
 	}
 	
 	public String make(Instruct instruct) {
@@ -1139,6 +1140,12 @@ public class CommandMaker {
 			type = "mode";
 			part = "all";
 			action = "auto-driving";
+			break;
+		case REBOOTCOMPUTER:
+			type = "reboot";
+			part = "all";
+			action = "reboot";
+			break;
 		default:
 			return "";
 		}
