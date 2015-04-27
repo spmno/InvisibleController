@@ -515,6 +515,24 @@
         android:text="@string/Z3" 
         android:onClick="clickDriverChairMotorZ3" />
     
+    <Button
+        android:id="@+id/leftSeatOnButton"
+        android:layout_column="4"
+        android:layout_gravity="fill"
+        android:layout_row="13"
+        android:text="@string/LeftSeatOn" 
+        android:onClick="clickedLeftSeatOn" />
+    
+    <Button
+        android:id="@+id/leftSeatOffButton"
+        android:layout_column="5"
+        android:layout_gravity="fill"
+        android:layout_row="13"
+        android:text="@string/LeftSeatOff" 
+        android:onClick="clickedLeftSeatOff" />
+    
+
+    
     <TextView
         android:id="@+id/textViewCoDriverSeatMotor"
         android:layout_column="0"
@@ -545,6 +563,22 @@
         android:layout_row="14"
         android:text="@string/Z3" 
         android:onClick="clickCoDriverChairMotorZ3" />
+    
+    <Button
+        android:id="@+id/rightSeatOnButton"
+        android:layout_column="4"
+        android:layout_gravity="fill"
+        android:layout_row="14"
+        android:text="@string/RightSeatOn" 
+        android:onClick="clickedRightSeatOn" />
+    
+    <Button
+        android:id="@+id/rightSeatOffButton"
+        android:layout_column="5"
+        android:layout_gravity="fill"
+        android:layout_row="14"
+        android:text="@string/RightSeatOff" 
+        android:onClick="clickedRightSeatOff" />
     
     <TextView
         android:id="@+id/textViewIrisDoor"
@@ -798,10 +832,10 @@
         android:onClick="clickF2" />
     
     <TextView
-        android:id="@+id/textViewWheelHandle"
+        android:id="@+id/SOSText"
         android:layout_column="0"
         android:layout_row="21"
-        android:text="@string/WheelHandle"
+        android:text="@string/SOS"
         android:textSize="40sp" />
 
     <Button
@@ -809,16 +843,16 @@
         android:layout_column="1"
         android:layout_gravity="fill"
         android:layout_row="21"
-        android:text="B1"
-        android:onClick="clickB1" />
+        android:text="@string/On"
+        android:onClick="clickSOSOn" />
     
     <Button
         android:id="@+id/buttonB2"
         android:layout_column="2"
         android:layout_gravity="fill"
         android:layout_row="21"
-        android:text="B2" 
-        android:onClick="clickB2" />
+        android:text="@string/Off" 
+        android:onClick="clickSOSOff" />
     
 
     <TextView
@@ -927,7 +961,7 @@
         android:onClick="clickedAudioPowerOff" />
     
     <Button
-        android:id="@+id/leftSeatOnButton"
+        android:id="@+id/leftSeatOnButton2"
         android:layout_column="3"
         android:layout_gravity="fill"
         android:layout_row="24"
@@ -935,7 +969,7 @@
         android:onClick="clickedLeftSeatOn" />
     
     <Button
-        android:id="@+id/leftSeatOffButton"
+        android:id="@+id/leftSeatOffButton2"
         android:layout_column="4"
         android:layout_gravity="fill"
         android:layout_row="24"
@@ -943,7 +977,7 @@
         android:onClick="clickedLeftSeatOff" />
     
     <Button
-        android:id="@+id/rightSeatOnButton"
+        android:id="@+id/rightSeatOnButton2"
         android:layout_column="5"
         android:layout_gravity="fill"
         android:layout_row="24"
@@ -951,7 +985,7 @@
         android:onClick="clickedRightSeatOn" />
     
     <Button
-        android:id="@+id/rightSeatOffButton"
+        android:id="@+id/rightSeatOffButton2"
         android:layout_column="1"
         android:layout_gravity="fill"
         android:layout_row="25"

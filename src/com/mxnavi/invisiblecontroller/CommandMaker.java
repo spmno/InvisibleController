@@ -196,6 +196,8 @@ public class CommandMaker {
 		TAILDOOROPENMODE,
 		TAILDOORCLOSEMODE,
 		REBOOTCOMPUTER,
+		SOSON,
+		SOSOFF,
 	}
 	
 	public String make(Instruct instruct) {
@@ -546,7 +548,7 @@ public class CommandMaker {
 		case CODRIVERCHAIRLAYDOWN:
 			type = "single";
 			part = "co-driver-seat";
-			action = "sheep";
+			action = "sleep";
 			break;
 		case CODRIVERCHAIRSTOP:
 			type = "single";
@@ -1145,6 +1147,16 @@ public class CommandMaker {
 			type = "reboot";
 			part = "all";
 			action = "reboot";
+			break;
+		case SOSON:
+			type = "single";
+			part = "sos";
+			action = "on";
+			break;
+		case SOSOFF:
+			type = "single";
+			part = "sos";
+			action = "off";
 			break;
 		default:
 			return "";

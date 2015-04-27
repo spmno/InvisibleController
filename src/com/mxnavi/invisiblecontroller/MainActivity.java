@@ -1005,6 +1005,16 @@ public class MainActivity extends Activity implements CommandResultListener, Ser
 		controllerServiceBinder.sendCommand(command);
 	}
 	
+	public void clickSOSOn(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SOSON);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
+	public void clickSOSOff(View v) {
+		String command = commandMaker.make(CommandMaker.Instruct.SOSOFF);
+		controllerServiceBinder.sendCommand(command);
+	}
+	
 	public void clickedRebootComputer(View v) {
 		Toast.makeText(getApplicationContext(), 
     			"÷ÿ∆Ù",

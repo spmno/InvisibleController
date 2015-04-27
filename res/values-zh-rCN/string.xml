@@ -147,4 +147,5 @@
     <string name="Media">媒体</string>
     <string name="Play">播放</string>
     <string name="RebootComputer">重启电脑</string>
+    <string name="SOS">SOS</string>
 </resources>
